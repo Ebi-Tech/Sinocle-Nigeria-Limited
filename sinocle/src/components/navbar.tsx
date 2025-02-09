@@ -21,7 +21,7 @@ const Navbar = () => {
         <Image src="/images/logo.png" alt="Logo" width={70} height={50} />
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex gap-10 text-[16px] font-thin font-serif uppercase tracking-wide items-center">
+        <ul className="hidden md:flex gap-10 text-[16px] text-white font-thin font-serif uppercase tracking-wide items-center">
           <li>
             <Link href="/" className="hover:text-gray-400">
               Home

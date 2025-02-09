@@ -9,6 +9,7 @@ export default function About() {
     <>
       {/* Background Image */}
       <section className="relative h-screen flex font-serif">
+        {/* Background Image */}
         <Image
           src={image}
           alt="About Background"
@@ -17,8 +18,8 @@ export default function About() {
           priority
         />
 
-        {/* Container for both Hero Text and Right Content */}
-        <div className="relative flex w-full justify-between text-white gap-10 max-w-full mx-auto">
+        {/* Container for Hero Text & Right Content (Large Screens) */}
+        <div className="relative flex w-full justify-between text-white gap-10 max-w-full mx-auto px-6 md:px-12 lg:flex">
           {/* Hero text */}
           <div className="flex-1 absolute top-[50%] left-[5%] transform -translate-y-1/2 mt-10">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl text-white font-bold">
@@ -26,7 +27,7 @@ export default function About() {
               construction
               <br /> company
             </h1>
-            <p className="text-sm sm:text-xl lg:text-2xl text-white mt-4">
+            <p className="text-sm sm:text-xl lg:text-xl text-white mt-4">
               From the onset till now, our mission remains centered on
               delivering <br />
               projects of superior quality, always on schedule.
@@ -39,9 +40,8 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right Content */}
-
-          <div className="flex-1 absolute top-[50%] right-[5%] transform -translate-y-1/2 space-y-6">
+          {/* Right Content (Desktop View - Vertically Stacked) */}
+          <div className="hidden lg:flex flex-1 flex-col absolute top-[50%] right-[5%] transform -translate-y-1/2 space-y-6">
             <h1 className="font-bold text-[32px] text-[#0D8C6D]">What We Do</h1>
             {[
               {
@@ -88,9 +88,82 @@ export default function About() {
                 ],
               },
             ].map((service, index) => (
-              <div key={index} className="flex items-start gap-4 pt-0">
-                <span>{service.icon}</span>
-                <div>
+              <div key={index} className="flex items-start gap-4">
+                <span className="flex-shrink-0">{service.icon}</span>
+                <div className="flex-1 text-justify">
+                  <h4 className="text-xl font-semibold">{service.title}</h4>
+                  {service.desc.map((line, lineIndex) => (
+                    <p key={lineIndex} className="text-sm">
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What We Do Section (For Medium & Small Screens) */}
+      <section className="lg:hidden relative py-16 px-6 bg-white text-gray-900 flex justify-center">
+        <div className="w-full max-w-3xl">
+          {/* Section Title (Left-aligned) */}
+          <h1 className="font-bold text-[32px] text-[#0D8C6D] text-left">
+            What We Do
+          </h1>
+
+          {/* Services List (Justified Text & Centered Section) */}
+          <div className="mt-6 space-y-6">
+            {[
+              {
+                icon: (
+                  <Building
+                    size={28}
+                    strokeWidth={1.5}
+                    className="text-[#0D8C6D]"
+                  />
+                ),
+                title: "Property Development and Contract",
+                desc: [
+                  "We offer reliable solutions for clients",
+                  "seeking to develop or contract properties.",
+                ],
+              },
+              {
+                icon: (
+                  <HomeIcon
+                    size={28}
+                    strokeWidth={1.5}
+                    className="text-[#0D8C6D]"
+                  />
+                ),
+                title: "Real Estate Development",
+                desc: [
+                  "We excel in real estate development,",
+                  "delivering exceptional projects that meet",
+                  "the highest standards of quality and innovation.",
+                ],
+              },
+              {
+                icon: (
+                  <MapPin
+                    size={28}
+                    strokeWidth={1.5}
+                    className="text-[#0D8C6D]"
+                  />
+                ),
+                title: "Premium Land Sales in Nigeria",
+                desc: [
+                  "Sinocle Nigeria Limited offers premium",
+                  "land sales throughout Nigeria.",
+                ],
+              },
+            ].map((service, index) => (
+              <div key={index} className="flex items-start gap-4">
+                {/* Icon */}
+                <span className="flex-shrink-0">{service.icon}</span>
+                {/* Text Content */}
+                <div className="flex-1 text-justify">
                   <h4 className="text-xl font-semibold">{service.title}</h4>
                   {service.desc.map((line, lineIndex) => (
                     <p key={lineIndex} className="text-sm">

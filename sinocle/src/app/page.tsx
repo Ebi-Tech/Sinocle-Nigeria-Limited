@@ -180,28 +180,32 @@ export default function Home() {
             />
           ))}
         </div>
-        {/* Hero text*/}
+
+        {/* Hero Text */}
         <div className="absolute top-[50%] left-[5%] transform -translate-y-1/2">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-white font-bold">
-            Building The Future, One <br /> Project at a Time
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif text-white font-bold">
+            Building The Future, One <br className="hidden sm:block" /> Project
+            at a Time
           </h1>
-          <p className="text-sm sm:text-xl lg:text-2xl text-white mt-4">
+          <p className="text-sm sm:text-lg lg:text-2xl text-white mt-4">
             From the onset till now, our mission remains centered on delivering{" "}
-            <br />
+            <br className="hidden sm:block" />
             projects of superior quality, always on schedule.
           </p>
+
           {/* CTA Buttons */}
-          <div className="mt-8 flex gap-4">
-            <button className="bg-white text-black px-6 py-2 font-medium hover:bg-gray-100 transition-colors">
+          <div className="mt-6 flex flex-row gap-3">
+            <button className="bg-white text-black px-4 py-2 w-32 sm:w-40 lg:w-auto font-medium hover:bg-gray-100 transition-colors">
               Get A Quote
             </button>
-            <button className="border border-white text-white px-6 py-2 font-medium bg-[#0D8C6D] hover:bg-[#38d1ab] transition-colors">
+            <button className="border border-white text-white px-4 py-2 w-32 sm:w-40 lg:w-auto font-medium bg-[#0D8C6D] hover:bg-[#38d1ab] transition-colors">
               Contact Us
             </button>
           </div>
         </div>
-        {/* Centered Helmet Image */}
-        <div className="absolute top-[55%] right-[5%] transform -translate-y-1/2">
+
+        {/* Helmet Image (Hidden on Mobile) */}
+        <div className="absolute top-[55%] right-[5%] transform -translate-y-1/2 hidden md:block">
           <Image
             src="/images/helmetguy.png"
             alt="Smaller Image"
