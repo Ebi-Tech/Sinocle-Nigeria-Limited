@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import SlideInSection from "@/components/SlideInSection";
 import { useState, useEffect } from "react";
 import {
   Building2,
@@ -213,108 +214,131 @@ export default function Home() {
       {/* Main Content */}
       <main className="bg-white">
         {/* Services Cards Section */}
-        <div className="relative -mt-[50px] px-4 mb-16">
-          <div className="max-w-7xl mx-auto">
-            <div className="bg-white shadow-lg relative before:absolute before:top-0 before:left-0 before:right-0 before:h-2 before:bg-[#0D8C6D]">
-              <div className="grid grid-cols-1 md:grid-cols-3 relative">
-                {/* General Contract Section */}
-                <div className="p-8 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <Image
-                      src="/images/engineer.svg"
-                      alt="General Contract"
-                      width={40}
-                      height={40}
-                    />
+        <SlideInSection direction="left" className="">
+          <div className="relative -mt-[50px] px-4 mb-16">
+            <div className="max-w-7xl mx-auto">
+              <div className="bg-white shadow-lg relative before:absolute before:top-0 before:left-0 before:right-0 before:h-2 before:bg-[#0D8C6D]">
+                <div className="grid grid-cols-1 md:grid-cols-3 relative">
+                  {/* General Contract Section */}
+                  <div className="p-8 text-center">
+                    <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                      <Image
+                        src="/images/engineer.svg"
+                        alt="General Contract"
+                        width={40}
+                        height={40}
+                      />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2">
+                      General Contract
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      Quality services rendered to all planning.
+                    </p>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    General Contract
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Quality services rendered to all planning.
-                  </p>
-                </div>
 
-                {/* Custom Vertical Divider 1 */}
-                <div className="hidden md:block absolute left-1/3 top-1/2 -translate-y-1/2 w-px h-16 bg-gray-900 z-10"></div>
+                  {/* Custom Vertical Divider 1 */}
+                  <div className="hidden md:block absolute left-1/3 top-1/2 -translate-y-1/2 w-px h-16 bg-gray-900 z-10"></div>
 
-                {/* Project Planning Section */}
-                <div className="p-8 text-center border-t md:border-t-0">
-                  <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <Image
-                      src="/images/ruler.svg"
-                      alt="Project Planning"
-                      width={40}
-                      height={40}
-                    />
+                  {/* Project Planning Section */}
+                  <div className="p-8 text-center border-t md:border-t-0">
+                    <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                      <Image
+                        src="/images/ruler.svg"
+                        alt="Project Planning"
+                        width={40}
+                        height={40}
+                      />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2">
+                      Project Planning
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      Quality services rendered to all planning.
+                    </p>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    Project Planning
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Quality services rendered to all planning.
-                  </p>
-                </div>
 
-                {/* Custom Vertical Divider 2 */}
-                <div className="hidden md:block absolute left-2/3 top-1/2 -translate-y-1/2 w-px h-16 bg-gray-900 z-10"></div>
+                  {/* Custom Vertical Divider 2 */}
+                  <div className="hidden md:block absolute left-2/3 top-1/2 -translate-y-1/2 w-px h-16 bg-gray-900 z-10"></div>
 
-                {/* Refurbishment Section */}
-                <div className="p-8 text-center border-t md:border-t-0">
-                  <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <Image
-                      src="/images/measuring-tool.svg"
-                      alt="Refurbishment"
-                      width={40}
-                      height={40}
-                    />
+                  {/* Refurbishment Section */}
+                  <div className="p-8 text-center border-t md:border-t-0">
+                    <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                      <Image
+                        src="/images/measuring-tool.svg"
+                        alt="Refurbishment"
+                        width={40}
+                        height={40}
+                      />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2">
+                      Refurbishment
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      Quality services rendered to all planning.
+                    </p>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Refurbishment</h3>
-                  <p className="text-gray-600 text-sm">
-                    Quality services rendered to all planning.
-                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </SlideInSection>
 
         {/* Who we are section */}
-        <section className="py-16">
-          <div className="container mx-auto px-5 flex justify-center gap-[70px]">
-            <Image
-              src="/images/frame.png"
-              alt="Refurbishment"
-              width={550}
-              height={140}
-            />
+        <section className="py-16 px-4 md:px-6 lg:px-8">
+          <div className="container mx-auto">
+            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-16">
+              {/* Image Section */}
+              <SlideInSection direction="right" className="w-full lg:w-1/2">
+                <div className="relative w-full">
+                  <Image
+                    src="/images/frame.png"
+                    alt="Refurbishment"
+                    width={900}
+                    height={600}
+                    className="w-full h-auto object-contain"
+                    priority
+                  />
+                </div>
+              </SlideInSection>
 
-            <div className="text-left font-serif gap-[90px]">
-              <p className="text[16px] font-bold">
-                Who We are{" "}
-                <span className="inline-block w-12 h-[2px] bg-black ml-2"></span>
-              </p>
-              <h1 className="text-[50px] font-bold">Sincole Nigeria Limited</h1>
-              <p className="text[16px]">
-                At Sinocle Nigeria Limited, we are proud to be the leading real
-                estate company in Nigeria, offering a comprehensive range of
-                services in real estate development, property development and
-                contract, real estate consulting, and land sales. With our
-                headquarters situated in Asaba, Delta State, Nigeria, we operate
-                across the nation, serving clients with professionalism,
-                expertise, and integrity. <br />
-                At the core of our organization lies a cohesive and accomplished
-                team of professionals, brought together by a shared passion for
-                bringing dreams to life. We take immense pride in our ability to
-                transform your ideas into tangible realities, crafted with
-                precision and attention to detail.
-              </p>
-              <button className="bg-[#0D8C6D] text-white text-[16px] px-6 py-2 font-medium hover:bg-[#38d1ab] transition-colors mt-5">
-                More About Us{" "}
-                <span className="ml-2 font-serif text-[16px] leading-[10px]">
-                  ↗
-                </span>
-              </button>
+              {/* Content Section */}
+              <SlideInSection direction="left" className="w-full lg:w-1/2">
+                <div className="text-left font-serif space-y-4">
+                  <p className="text-base md:text-lg font-bold flex items-center">
+                    Who We are{" "}
+                    <span className="inline-block w-12 h-[2px] bg-black ml-2"></span>
+                  </p>
+                  <h1 className="text-3xl md:text-4xl lg:text-[50px] font-bold leading-tight">
+                    Sincole Nigeria Limited
+                  </h1>
+                  <div className="space-y-4">
+                    <p className="text-base md:text-lg">
+                      At Sinocle Nigeria Limited, we are proud to be the leading
+                      real estate company in Nigeria, offering a comprehensive
+                      range of services in real estate development, property
+                      development and contract, real estate consulting, and land
+                      sales. With our headquarters situated in Asaba, Delta
+                      State, Nigeria, we operate across the nation, serving
+                      clients with professionalism, expertise, and integrity.
+                    </p>
+                    <p className="text-base md:text-lg">
+                      At the core of our organization lies a cohesive and
+                      accomplished team of professionals, brought together by a
+                      shared passion for bringing dreams to life. We take
+                      immense pride in our ability to transform your ideas into
+                      tangible realities, crafted with precision and attention
+                      to detail.
+                    </p>
+                  </div>
+                  <button className="bg-[#0D8C6D] text-white text-base md:text-lg px-6 py-2 font-medium hover:bg-[#38d1ab] transition-colors mt-6 flex items-center">
+                    More About Us
+                    <span className="ml-2 font-serif text-lg leading-none">
+                      ↗
+                    </span>
+                  </button>
+                </div>
+              </SlideInSection>
             </div>
           </div>
         </section>
