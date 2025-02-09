@@ -46,7 +46,7 @@ export default function Home() {
           {/* CTA Buttons */}
           <div className="mt-8 flex gap-4">
             <button className="bg-white text-black px-6 py-2 font-medium hover:bg-gray-100 transition-colors">
-              Get Connected
+              Get A Quote
             </button>
             <button className="border border-white text-white px-6 py-2 font-medium bg-[#0D8C6D] hover:bg-[#38d1ab] transition-colors">
               Contact Us
@@ -144,7 +144,7 @@ export default function Home() {
               height={140}
             />
 
-            <div className="text-left font-serif">
+            <div className="text-left font-serif gap-10">
               <p className="text[16px] font-bold">Who We are </p>
               <h1 className="text-[50px] font-bold">Sincole Nigeria Limited</h1>
               <p className="text[16px]">
@@ -161,6 +161,9 @@ export default function Home() {
                 transform your ideas into tangible realities, crafted with
                 precision and attention to detail.
               </p>
+              <button className="bg-[#0D8C6D] text-white px-6 py-2 font-medium hover:bg-[#38d1ab] transition-colors">
+                More About Us
+              </button>
             </div>
           </div>
         </section>
