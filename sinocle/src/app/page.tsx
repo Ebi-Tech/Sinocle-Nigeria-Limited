@@ -135,8 +135,8 @@ export default function Home() {
         </div>
 
         {/* Additional Content Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-8 flex justify-center gap-8">
+        <section className="py-16 ">
+          <div className="container mx-auto px-5 flex justify-center gap-[70px]">
             <Image
               src="/images/frame.png"
               alt="Refurbishment"
@@ -144,8 +144,11 @@ export default function Home() {
               height={140}
             />
 
-            <div className="text-left font-serif gap-10">
-              <p className="text[16px] font-bold">Who We are </p>
+            <div className="text-left font-serif gap-[90px]">
+              <p className="text[16px] font-bold">
+                Who We are{" "}
+                <span className="inline-block w-12 h-[2px] bg-white ml-2"></span>{" "}
+              </p>
               <h1 className="text-[50px] font-bold">Sincole Nigeria Limited</h1>
               <p className="text[16px]">
                 At Sinocle Nigeria Limited, we are proud to be the leading real
@@ -161,9 +164,70 @@ export default function Home() {
                 transform your ideas into tangible realities, crafted with
                 precision and attention to detail.
               </p>
-              <button className="bg-[#0D8C6D] text-white px-6 py-2 font-medium hover:bg-[#38d1ab] transition-colors">
-                More About Us
+              <button className="bg-[#0D8C6D] text-white text-[16px] px-6 py-2 font-medium hover:bg-[#38d1ab] transition-colors mt-5">
+                More About Us{" "}
+                <span className="ml-2 font-serif text-[16px] leading-[10px]">
+                  ↗
+                </span>
               </button>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#0D8C6D] text-white py-16 px-10 md:px-20">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+            {/* Left Content */}
+            <div>
+              <h5 className="uppercase tracking-wide font-semibold">
+                Who We Do{" "}
+                <span className="inline-block w-12 h-[2px] bg-white ml-2"></span>
+              </h5>
+              <h2 className="text-4xl font-bold mt-2">Our Services</h2>
+              <p className="text-lg mt-4">
+                Our range of services is crafted to deliver strategic insights
+                and foster sustainable growth for businesses across various
+                industries.
+              </p>
+              <button className="mt-6 border border-white text-white py-2 px-6 rounded hover:bg-white hover:text-[#007550] transition">
+                View All Services →
+              </button>
+            </div>
+
+            {/* Right Content */}
+            <div className="space-y-6">
+              {[
+                {
+                  icon: "📊",
+                  title: "Residential",
+                  desc: "Whether it’s crafting custom-built homes or revitalizing existing properties.",
+                },
+                {
+                  icon: "🏢",
+                  title: "Commercial",
+                  desc: "From sleek office complexes to bustling retail spaces.",
+                },
+                {
+                  icon: "⚖️",
+                  title: "Government",
+                  desc: "We tackle projects of all sizes and complexity with dedication and expertise.",
+                },
+                {
+                  icon: "📋",
+                  title: "Consultation",
+                  desc: "Consultants assist in navigating the complexities.",
+                },
+              ].map((service, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-4 border-t border-white pt-4"
+                >
+                  <span className="text-3xl">{service.icon}</span>
+                  <div>
+                    <h4 className="text-xl font-semibold">{service.title}</h4>
+                    <p className="text-sm">{service.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
