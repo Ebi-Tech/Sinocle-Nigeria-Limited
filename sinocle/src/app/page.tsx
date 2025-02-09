@@ -43,6 +43,15 @@ export default function Home() {
             <br />
             projects of superior quality, always on schedule.
           </p>
+          {/* Added CTA Buttons */}
+          <div className="mt-8 flex gap-4">
+            <button className="bg-white text-black px-6 py-2 font-medium hover:bg-gray-100 transition-colors">
+              Get Connected
+            </button>
+            <button className="border border-white text-white px-6 py-2 font-medium hover:bg-white/10 transition-colors">
+              Contact Us
+            </button>
+          </div>
         </div>
         {/* Centered Helmet Image */}
         <div className="absolute top-[55%] right-[5%] transform -translate-y-1/2">
@@ -56,45 +65,73 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Content Section */}
-      <section className="bg-white">
-        <div className="container mx-auto py-16 px-8">
-          <ol className="list-inside list-decimal text-sm text-black mb-8">
-            <li className="mb-2">
-              Get started by editing{" "}
-              <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-                src/app/page.tsx
-              </code>
-              .
-            </li>
-            <li>Save and see your changes instantly.</li>
-          </ol>
+      {/* Services Cards Section - Overlapping */}
+      <div className="absolute -bottom-32 left-0 right-0 mx-auto px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-white shadow-lg relative before:absolute before:top-0 before:left-0 before:right-0 before:h-1 before:bg-lime-800">
+            <div className="grid grid-cols-1 md:grid-cols-3 relative">
+              {/* General Contract Section */}
+              <div className="p-8 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <Image
+                    src="/images/engineer.svg"
+                    alt="General Contract"
+                    width={40}
+                    height={40}
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">General Contract</h3>
+                <p className="text-gray-600 text-sm">
+                  Quality services rendered to all planning.
+                </p>
+              </div>
 
-          <div className="flex gap-4 items-center flex-col sm:flex-row">
-            <a
-              className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                className="dark:invert"
-                src="/vercel.svg"
-                alt="Vercel logomark"
-                width={20}
-                height={20}
-              />
-              Deploy now
-            </a>
-            <a
-              className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-              href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read our docs
-            </a>
+              {/* Custom Vertical Divider 1 */}
+              <div className="hidden md:block absolute left-1/3 top-1/2 -translate-y-1/2 w-px h-16 bg-gray-900 z-10"></div>
+
+              {/* Project Planning Section */}
+              <div className="p-8 text-center border-t md:border-t-0">
+                <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <Image
+                    src="/images/ruler.svg"
+                    alt="Project Planning"
+                    width={40}
+                    height={40}
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Project Planning</h3>
+                <p className="text-gray-600 text-sm">
+                  Quality services rendered to all planning.
+                </p>
+              </div>
+
+              {/* Custom Vertical Divider 2 */}
+              <div className="hidden md:block absolute left-2/3 top-1/2 -translate-y-1/2 w-px h-16 bg-gray-900 z-10"></div>
+
+              {/* Refurbishment Section */}
+              <div className="p-8 text-center border-t md:border-t-0">
+                <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <Image
+                    src="/images/measuring-tool.svg"
+                    alt="Refurbishment"
+                    width={40}
+                    height={40}
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Refurbishment</h3>
+                <p className="text-gray-600 text-sm">
+                  Quality services rendered to all planning.
+                </p>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+
+      {/* Content Section - Updated with more padding top to account for overlapping cards */}
+      <section className="bg-white pt-40 pb-16">
+        <div className="container mx-auto px-8">
+          {/* Rest of your content */}
         </div>
       </section>
     </div>

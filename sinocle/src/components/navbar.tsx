@@ -10,7 +10,7 @@ const Navbar = () => {
   const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("Searching for:", searchTerm);
-    // Implement your search logic here
+    // search logic
   };
 
   return (
