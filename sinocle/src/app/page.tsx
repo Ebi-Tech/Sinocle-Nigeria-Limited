@@ -48,7 +48,7 @@ export default function Home() {
             <button className="bg-white text-black px-6 py-2 font-medium hover:bg-gray-100 transition-colors">
               Get Connected
             </button>
-            <button className="border border-white text-white px-6 py-2 font-medium hover:bg-white/10 transition-colors">
+            <button className="border border-white text-white px-6 py-2 font-medium bg-[#0D8C6D] hover:bg-[#38d1ab] transition-colors">
               Contact Us
             </button>
           </div>
