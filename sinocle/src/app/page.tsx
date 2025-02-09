@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { Building2, Briefcase, Scale, ClipboardCheck } from "lucide-react";
 
 const images = ["/images/1.png", "/images/2.png", "/images/3.png"];
 
@@ -133,8 +134,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* Additional Content Section */}
+        {/* Who we are section */}
         <section className="py-16 ">
           <div className="container mx-auto px-5 flex justify-center gap-[70px]">
             <Image
@@ -147,7 +147,7 @@ export default function Home() {
             <div className="text-left font-serif gap-[90px]">
               <p className="text[16px] font-bold">
                 Who We are{" "}
-                <span className="inline-block w-12 h-[2px] bg-white ml-2"></span>{" "}
+                <span className="inline-block w-12 h-[2px] bg-black ml-2"></span>{" "}
               </p>
               <h1 className="text-[50px] font-bold">Sincole Nigeria Limited</h1>
               <p className="text[16px]">
@@ -173,7 +173,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        {/* What we do Section */}
         <section className="bg-[#0D8C6D] text-white py-16 px-10 md:px-20">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
             {/* Left Content */}
@@ -189,7 +189,10 @@ export default function Home() {
                 industries.
               </p>
               <button className="mt-6 border border-white text-white py-2 px-6 rounded hover:bg-white hover:text-[#007550] transition">
-                View All Services →
+                View All Services{" "}
+                <span className="ml-2 font-serif text-[16px] leading-[10px]">
+                  ↗
+                </span>
               </button>
             </div>
 
@@ -197,22 +200,42 @@ export default function Home() {
             <div className="space-y-6">
               {[
                 {
-                  icon: "📊",
+                  icon: (
+                    <Building2
+                      size={28}
+                      strokeWidth={1.5}
+                      className="text-white"
+                    />
+                  ),
                   title: "Residential",
                   desc: "Whether it’s crafting custom-built homes or revitalizing existing properties.",
                 },
                 {
-                  icon: "🏢",
+                  icon: (
+                    <Briefcase
+                      size={28}
+                      strokeWidth={1.5}
+                      className="text-white"
+                    />
+                  ),
                   title: "Commercial",
                   desc: "From sleek office complexes to bustling retail spaces.",
                 },
                 {
-                  icon: "⚖️",
+                  icon: (
+                    <Scale size={28} strokeWidth={1.5} className="text-white" />
+                  ),
                   title: "Government",
                   desc: "We tackle projects of all sizes and complexity with dedication and expertise.",
                 },
                 {
-                  icon: "📋",
+                  icon: (
+                    <ClipboardCheck
+                      size={28}
+                      strokeWidth={1.5}
+                      className="text-white"
+                    />
+                  ),
                   title: "Consultation",
                   desc: "Consultants assist in navigating the complexities.",
                 },
@@ -221,7 +244,7 @@ export default function Home() {
                   key={index}
                   className="flex items-start gap-4 border-t border-white pt-4"
                 >
-                  <span className="text-3xl">{service.icon}</span>
+                  <span>{service.icon}</span>
                   <div>
                     <h4 className="text-xl font-semibold">{service.title}</h4>
                     <p className="text-sm">{service.desc}</p>
@@ -231,6 +254,113 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <section className="bg-gray-50 py-16 px-10 md:px-20">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-gray-900">
+              Recent Projects
+            </h2>
+            <div className="mt-2 flex justify-center">
+              <span className="inline-block w-12 h-[2px] bg-teal-500"></span>
+            </div>
+          </div>
+
+          {/* Project Cards */}
+          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 mt-10">
+            {[
+              { image: "/project1.jpg" },
+              { image: "/project2.jpg" },
+              { image: "/project3.jpg" },
+            ].map((project, index) => (
+              <div
+                key={index}
+                className="bg-white shadow-md rounded-lg overflow-hidden"
+              >
+                <img
+                  src={project.image}
+                  alt="Project"
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6 text-center">
+                  <h4 className="text-lg font-semibold text-gray-800">
+                    Project Title
+                  </h4>
+                  <p className="text-gray-600 text-sm mt-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                  <button className="mt-4 border border-gray-800 text-gray-800 py-2 px-4 rounded hover:bg-gray-800 hover:text-white transition">
+                    View Project
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* View All Button */}
+          <div className="text-center mt-10">
+            <button className="border border-gray-800 text-gray-800 py-2 px-6 rounded hover:bg-gray-800 hover:text-white transition">
+              View All{" "}
+              <span className="ml-2 font-serif text-[16px] leading-[10px]">
+                ↗
+              </span>
+            </button>
+          </div>
+        </section>
+        <section className="bg-gray-50 py-16 px-10 md:px-20">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-gray-900">
+              Recent Projects
+            </h2>
+            <div className="mt-2 flex justify-center">
+              <span className="inline-block w-12 h-[2px] bg-teal-500"></span>
+            </div>
+          </div>
+
+          {/* Project Cards */}
+          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 mt-10">
+            {[
+              { image: "/images/r1.png" },
+              { image: "/images/r2.png" },
+              { image: "/images/r3.png" },
+            ].map((project, index) => (
+              <div
+                key={index}
+                className="bg-white shadow-md rounded-lg overflow-hidden"
+              >
+                <div className="relative w-full h-48">
+                  <Image
+                    src={project.image}
+                    alt="Project"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-t-lg"
+                  />
+                </div>
+                <div className="p-6 text-center">
+                  <h4 className="text-lg font-semibold text-gray-800">
+                    Project Title
+                  </h4>
+                  <p className="text-gray-600 text-sm mt-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                  <button className="mt-4 border border-gray-800 text-gray-800 py-2 px-4 rounded hover:bg-gray-800 hover:text-white transition">
+                    View Project
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* View All Button */}
+          <div className="text-center mt-10">
+            <button className="border border-gray-800 text-gray-800 py-2 px-6 rounded hover:bg-gray-800 hover:text-white transition">
+              View All{" "}
+              <span className="ml-2 font-serif text-[16px] leading-[10px]">
+                ↗
+              </span>
+            </button>
+          </div>
+        </section>
+        );
       </main>
     </>
   );
