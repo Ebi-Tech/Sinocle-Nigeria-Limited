@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import SlideInSection from "@/components/SlideInSection";
 import { useState, useEffect } from "react";
 import {
@@ -102,6 +103,12 @@ export default function Home() {
       );
     };
 
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+      setIsMounted(true);
+    }, []);
+
     return (
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
@@ -124,13 +131,16 @@ export default function Home() {
             <div className="max-w-2xl">
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="w-32 h-32 relative">
-                  <Image
-                    src={testimonials[currentIndex].image}
-                    alt={testimonials[currentIndex].name}
-                    className="rounded-lg object-cover"
-                    fill
-                    priority
-                  />
+                  {isMounted && (
+                    <Image
+                      src={testimonials[currentIndex].image}
+                      alt={testimonials[currentIndex].name}
+                      fill
+                      className="absolute object-cover transition-opacity duration-1000"
+                      style={{ opacity: currentIndex === currentImage ? 1 : 0 }}
+                      priority={currentIndex === 0}
+                    />
+                  )}
                 </div>
                 <div className="flex-1">
                   <p className="text-gray-600 italic mb-4">
@@ -335,12 +345,14 @@ export default function Home() {
                       to detail.
                     </p>
                   </div>
-                  <button className="bg-[#0D8C6D] text-white text-base md:text-lg px-6 py-2 font-medium hover:bg-[#38d1ab] transition-colors mt-6 flex items-center">
-                    More About Us
-                    <span className="ml-2 font-serif text-lg leading-none">
-                      ↗
-                    </span>
-                  </button>
+                  <Link href="/about">
+                    <button className="bg-[#0D8C6D] text-white text-base md:text-lg px-6 py-2 font-medium hover:bg-[#38d1ab] transition-colors mt-6 flex items-center">
+                      More About Us
+                      <span className="ml-2 font-serif text-lg leading-none">
+                        ↗
+                      </span>
+                    </button>
+                  </Link>
                 </div>
               </SlideInSection>
             </div>
@@ -351,168 +363,187 @@ export default function Home() {
         <section className="bg-[#0D8C6D] text-white py-16 px-10 md:px-20">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
             {/* Left Content */}
-            <div>
-              <h5 className="uppercase tracking-wide font-semibold">
-                What We Do{" "}
-                <span className="inline-block w-12 h-[2px] bg-white ml-2"></span>
-              </h5>
-              <h2 className="text-4xl font-bold mt-2">Our Services</h2>
-              <p className="text-lg mt-4">
-                Our range of services is crafted to deliver strategic insights
-                and foster sustainable growth for businesses across various
-                industries.
-              </p>
-              <button className="mt-6 border border-white text-white py-2 px-6 rounded hover:bg-white hover:text-[#0D8C6D] transition">
-                View All Services{" "}
-                <span className="ml-2 font-serif text-[16px] leading-[10px]">
-                  ↗
-                </span>
-              </button>
-            </div>
+            <SlideInSection direction="right" className="">
+              <div>
+                <h5 className="uppercase tracking-wide font-semibold">
+                  What We Do{" "}
+                  <span className="inline-block w-12 h-[2px] bg-white ml-2"></span>
+                </h5>
+                <h2 className="text-4xl font-bold mt-2">Our Services</h2>
+                <p className="text-lg mt-4">
+                  Our range of services is crafted to deliver strategic insights
+                  and foster sustainable growth for businesses across various
+                  industries.
+                </p>
+                <button className="mt-6 border border-white text-white py-2 px-6 rounded hover:bg-white hover:text-[#0D8C6D] transition">
+                  View All Services{" "}
+                  <span className="ml-2 font-serif text-[16px] leading-[10px]">
+                    ↗
+                  </span>
+                </button>
+              </div>
+            </SlideInSection>
 
             {/* Right Content */}
-            <div className="space-y-6">
-              {[
-                {
-                  icon: (
-                    <Building2
-                      size={28}
-                      strokeWidth={1.5}
-                      className="text-white"
-                    />
-                  ),
-                  title: "Residential",
-                  desc: "Whether it's crafting custom-built homes or revitalizing existing properties.",
-                },
-                {
-                  icon: (
-                    <Briefcase
-                      size={28}
-                      strokeWidth={1.5}
-                      className="text-white"
-                    />
-                  ),
-                  title: "Commercial",
-                  desc: "From sleek office complexes to bustling retail spaces.",
-                },
-                {
-                  icon: (
-                    <Scale size={28} strokeWidth={1.5} className="text-white" />
-                  ),
-                  title: "Government",
-                  desc: "We tackle projects of all sizes and complexity with dedication and expertise.",
-                },
-                {
-                  icon: (
-                    <ClipboardCheck
-                      size={28}
-                      strokeWidth={1.5}
-                      className="text-white"
-                    />
-                  ),
-                  title: "Consultation",
-                  desc: "Consultants assist in navigating the complexities.",
-                },
-              ].map((service, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-4 border-t border-white pt-4"
-                >
-                  <span>{service.icon}</span>
-                  <div>
-                    <h4 className="text-xl font-semibold">{service.title}</h4>
-                    <p className="text-sm">{service.desc}</p>
+            <SlideInSection direction="left" className="">
+              <div className="space-y-6">
+                {[
+                  {
+                    icon: (
+                      <Building2
+                        size={28}
+                        strokeWidth={1.5}
+                        className="text-white"
+                      />
+                    ),
+                    title: "Residential",
+                    desc: "Whether it's crafting custom-built homes or revitalizing existing properties.",
+                  },
+                  {
+                    icon: (
+                      <Briefcase
+                        size={28}
+                        strokeWidth={1.5}
+                        className="text-white"
+                      />
+                    ),
+                    title: "Commercial",
+                    desc: "From sleek office complexes to bustling retail spaces.",
+                  },
+                  {
+                    icon: (
+                      <Scale
+                        size={28}
+                        strokeWidth={1.5}
+                        className="text-white"
+                      />
+                    ),
+                    title: "Government",
+                    desc: "We tackle projects of all sizes and complexity with dedication and expertise.",
+                  },
+                  {
+                    icon: (
+                      <ClipboardCheck
+                        size={28}
+                        strokeWidth={1.5}
+                        className="text-white"
+                      />
+                    ),
+                    title: "Consultation",
+                    desc: "Consultants assist in navigating the complexities.",
+                  },
+                ].map((service, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 border-t border-white pt-4"
+                  >
+                    <span>{service.icon}</span>
+                    <div>
+                      <h4 className="text-xl font-semibold">{service.title}</h4>
+                      <p className="text-sm">{service.desc}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </SlideInSection>
           </div>
         </section>
 
         {/* Recent Projects Section */}
-        <section className="bg-gray-50 py-16 px-10 md:px-20">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900">
-              Recent Projects
-            </h2>
-            <div className="mt-2 flex justify-center">
-              <span className="inline-block w-12 h-[2px] bg-[#0D8C6D]"></span>
-            </div>
-          </div>
-
-          {/* Project Cards */}
-          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 mt-10 ">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="bg-white shadow-md rounded-lg overflow-hidden"
-              >
-                <div className="relative w-full h-48">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-t-lg"
-                  />
-                </div>
-                <div className="p-6 text-center">
-                  <h4 className="text-lg font-semibold text-gray-800">
-                    {project.title}
-                  </h4>
-                  <p className="text-[#999999] text-sm mt-2">
-                    {project.description}
-                  </p>
-                  <button className="mt-4 border border-gray-800 text-gray-800 py-2 px-4 rounded hover:bg-gray-800 hover:text-white transition">
-                    View Project
-                  </button>
-                </div>
+        <SlideInSection direction="left" className="">
+          <section className="bg-gray-50 py-16 px-10 md:px-20">
+            <div className="max-w-6xl mx-auto text-center">
+              <h2 className="text-3xl font-bold text-gray-900">
+                Recent Projects
+              </h2>
+              <div className="mt-2 flex justify-center">
+                <span className="inline-block w-12 h-[2px] bg-[#0D8C6D]"></span>
               </div>
-            ))}
-          </div>
+            </div>
 
-          {/* View All Button */}
-          <div className="text-center mt-10">
-            <button className="border border-gray-800 text-gray-800 py-2 px-6 rounded hover:bg-gray-800 hover:text-white transition">
-              View All{" "}
-              <span className="ml-2 font-serif text-[16px] leading-[10px]">
-                ↗
-              </span>
-            </button>
-          </div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="w-full max-w-6xl mx-auto py-12 px-4 ">
-          <p className="text-left font-serif text-[16px] font-thin mb-10 w-[70%] text-[#999999]">
-            At Sincole, we don&apos;t just offer solutions; we craft
-            collaborative roadmaps tailored to your unique needs, ensuring your
-            buildings not only thrives in the present but also remains resilient
-            in the face of future challenges.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
+            {/* Project Cards */}
+            <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 mt-10 ">
+              {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center text-center"
+                  className="bg-white shadow-md rounded-lg overflow-hidden"
                 >
-                  <div className="mb-4">
-                    <Icon className="w-12 h-12 text-gray-600" />
+                  <div className="relative w-full h-48">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-t-lg"
+                    />
                   </div>
-                  <h2 className="text-4xl font-bold mb-2">{stat.value}</h2>
-                  <p className="text-[#999999]">{stat.description}</p>
+                  <div className="p-6 text-center">
+                    <h4 className="text-lg font-semibold text-gray-800">
+                      {project.title}
+                    </h4>
+                    <p className="text-[#999999] text-sm mt-2">
+                      {project.description}
+                    </p>
+                    <Link href="/projects">
+                      <button className="mt-4 border border-gray-800 text-gray-800 py-2 px-4 rounded hover:bg-gray-800 hover:text-white transition">
+                        View Project
+                      </button>
+                    </Link>
+                  </div>
                 </div>
-              );
-            })}
-          </div>
-        </section>
+              ))}
+            </div>
+
+            {/* View All Button */}
+            <div className="text-center mt-10">
+              <Link href="/projects">
+                <button className="border border-gray-800 text-gray-800 py-2 px-6 rounded hover:bg-gray-800 hover:text-white transition">
+                  View All{" "}
+                  <span className="ml-2 font-serif text-[16px] leading-[10px]">
+                    ↗
+                  </span>
+                </button>
+              </Link>
+            </div>
+          </section>
+        </SlideInSection>
+
+        {/* Stats Section */}
+        <SlideInSection direction="down" className="">
+          <section className="w-full max-w-6xl mx-auto py-12 px-4 ">
+            <p className="text-left font-serif text-[16px] font-thin mb-10 w-[70%] text-[#999999]">
+              At Sincole, we don&apos;t just offer solutions; we craft
+              collaborative roadmaps tailored to your unique needs, ensuring
+              your buildings not only thrives in the present but also remains
+              resilient in the face of future challenges.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {stats.map((stat, index) => {
+                const Icon = stat.icon;
+                return (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center text-center"
+                  >
+                    <div className="mb-4">
+                      <Icon className="w-12 h-12 text-gray-600" />
+                    </div>
+                    <h2 className="text-4xl font-bold mb-2">{stat.value}</h2>
+                    <p className="text-[#999999]">{stat.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        </SlideInSection>
+
         {/* Client Reviews Section */}
-        <section className="py-16 bg-white">
-          {/* Client Reviews Section */}
-          <ClientReviews />
-        </section>
+        <SlideInSection direction="down" className="">
+          <section className="py-16 bg-white">
+            {/* Client Reviews Section */}
+            <ClientReviews />
+          </section>
+        </SlideInSection>
       </main>
     </>
   );

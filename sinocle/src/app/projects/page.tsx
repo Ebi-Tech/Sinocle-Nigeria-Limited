@@ -1,10 +1,12 @@
+"use client";
 import Image from "next/image";
+import SlideInSection from "@/components/SlideInSection";
 
 export default function Projects() {
   const image = "/images/project.png";
 
   return (
-    <>
+    <main className="w-full">
       {/* Background Image */}
       <section className="relative h-screen flex font-serif">
         {/* Background Image */}
@@ -31,6 +33,91 @@ export default function Projects() {
           </div>
         </div>
       </section>
-    </>
+
+      {/* Services Section */}
+      <SlideInSection direction="down" className="">
+        <section className="py-16 px-6 bg-gray-100">
+          <div className="max-w-6xl mx-auto">
+            {/* Grid Container */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Service Cards */}
+              {[
+                {
+                  title: "Property Development",
+                  desc: "We offer reliable solutions for clients seeking to develop or contract properties.",
+                  img: "/images/p1.png",
+                },
+                {
+                  title: "Real Estate Development",
+                  desc: "We excel in real estate development, delivering exceptional projects with quality and innovation.",
+                  img: "/images/r2.png",
+                },
+                {
+                  title: "Premium Land Sales",
+                  desc: "Sinocle Nigeria Limited offers premium land sales throughout Nigeria.",
+                  img: "/images/r1.png",
+                },
+                {
+                  title: "Premium Land Sales",
+                  desc: "Sinocle Nigeria Limited offers premium land sales throughout Nigeria.",
+                  img: "/images/r1.png",
+                },
+                {
+                  title: "Premium Land Sales",
+                  desc: "Sinocle Nigeria Limited offers premium land sales throughout Nigeria.",
+                  img: "/images/r1.png",
+                },
+                {
+                  title: "Premium Land Sales",
+                  desc: "Sinocle Nigeria Limited offers premium land sales throughout Nigeria.",
+                  img: "/images/r1.png",
+                },
+                {
+                  title: "Premium Land Sales",
+                  desc: "Sinocle Nigeria Limited offers premium land sales throughout Nigeria.",
+                  img: "/images/r1.png",
+                },
+                {
+                  title: "Premium Land Sales",
+                  desc: "Sinocle Nigeria Limited offers premium land sales throughout Nigeria.",
+                  img: "/images/r1.png",
+                },
+                {
+                  title: "Premium Land Sales",
+                  desc: "Sinocle Nigeria Limited offers premium land sales throughout Nigeria.",
+                  img: "/images/r1.png",
+                },
+              ].map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-white shadow-lg rounded-lg overflow-hidden"
+                >
+                  {/* Image */}
+                  <SlideInSection direction="left" className="">
+                    <Image
+                      src={service.img}
+                      alt={service.title}
+                      width={400}
+                      height={250}
+                      className="w-full h-48 object-cover"
+                    />
+                  </SlideInSection>
+                  {/* Content */}
+                  <SlideInSection direction="right" className="">
+                    <div className="p-6">
+                      <h3 className="text-lg font-semibold">{service.title}</h3>
+                      <p className="text-gray-600 mt-2">{service.desc}</p>
+                      <button className="mt-4 border border-black px-4 py-2 text-sm">
+                        LEARN MORE
+                      </button>
+                    </div>
+                  </SlideInSection>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </SlideInSection>
+    </main>
   );
 }

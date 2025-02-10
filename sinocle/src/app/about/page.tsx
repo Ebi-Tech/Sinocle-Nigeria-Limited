@@ -94,7 +94,7 @@ export default function About() {
   ];
 
   return (
-    <>
+    <main className="font-serif w-full">
       {/* Background Image */}
       <section className="relative h-screen flex font-serif">
         {/* Background Image */}
@@ -468,12 +468,12 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                  <button className="bg-[#0D8C6D] text-white px-6 py-3 text-sm md:text-base font-medium hover:bg-[#0D8C6D]/90 transition-colors">
+                <div className="flex flex-col sm:flex-row gap-4 mt-8 bg-[#0D8C6D] justify-between p-5">
+                  <h1 className=" text-white px-6 py-3 text-sm lg:text-[30px] md:text-base font-medium hover:bg-[#0D8C6D]/90 transition-colors">
                     Get Free Consultation
-                  </button>
-                  <button className="border border-[#0D8C6D] text-[#0D8C6D] px-6 py-3 text-sm md:text-base font-medium hover:bg-[#0D8C6D] hover:text-white transition-colors">
-                    ONLINE ESTIMATE FORM
+                  </h1>
+                  <button className="border border-white text-white px-6 py-3 text-sm md:text-base font-medium hover:bg-[#0D8C6D] hover:text-white transition-colors">
+                    Get a quote
                   </button>
                 </div>
               </div>
@@ -481,6 +481,6 @@ export default function About() {
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }
