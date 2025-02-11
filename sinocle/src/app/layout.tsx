@@ -14,8 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Navbar /> {/* ✅ Navbar is now part of all pages */}
+      <body className="w-full bg-white">
+        <Navbar />
         {children}
       </body>
     </html>
