@@ -139,7 +139,6 @@ export default function Home() {
                       alt={testimonials[currentIndex].name}
                       fill
                       className="absolute object-cover transition-opacity duration-1000"
-                      style={{ opacity: currentIndex === currentImage ? 1 : 0 }}
                       priority={currentIndex === 0}
                     />
                   )}
