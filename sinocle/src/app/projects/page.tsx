@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import SlideInSection from "@/components/SlideInSection";
-
+import Link from "next/link";
 export default function Projects() {
   const image = "/images/project.png";
 
@@ -46,6 +46,7 @@ export default function Projects() {
                   title: "Property Development",
                   desc: "We offer reliable solutions for clients seeking to develop or contract properties.",
                   img: "/images/p1.png",
+                  link: "/project1",
                 },
                 {
                   title: "Real Estate Development",
@@ -107,9 +108,11 @@ export default function Projects() {
                     <div className="p-6">
                       <h3 className="text-lg font-semibold">{service.title}</h3>
                       <p className="text-gray-600 mt-2">{service.desc}</p>
-                      <button className="mt-4 border border-black px-4 py-2 text-sm">
-                        LEARN MORE
-                      </button>
+                      <Link href={service.link || "#"}>
+                        <button className="mt-4 border border-black px-4 py-2 text-sm">
+                          LEARN MORE
+                        </button>
+                      </Link>
                     </div>
                   </SlideInSection>
                 </div>
