@@ -94,7 +94,7 @@ export default function About() {
   ];
 
   return (
-    <main className="font-serif w-full">
+    <main className="font-serif w-screen">
       {/* Background Image */}
       <section className="relative h-screen flex font-serif">
         {/* Background Image */}
@@ -270,7 +270,7 @@ export default function About() {
           <div className="container mx-auto px-4 max-w-6xl">
             {/* Title Section */}
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-2">About us</h2>
+              <h2 className="text-3xl font-bold mb-2 text-black ">About us</h2>
               <div className="w-12 h-1 bg-[#0D8C6D] mx-auto"></div>
             </div>
 
@@ -349,7 +349,7 @@ export default function About() {
 
       {/* Achievements Section */}
       <SlideInSection direction="up" className="">
-        <section className="py-12 px-4 bg-gray-100 font-serif">
+        <section className="py-12 px-4 bg-gray-100 font-serif text-black ">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <div className="flex justify-center items-center space-x-3">
@@ -438,7 +438,7 @@ export default function About() {
                     Our Values{" "}
                     <span className="inline-block w-12 h-[2px] bg-black ml-2"></span>
                   </p>
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-black">
                     No Project Too Big or Too Small
                   </h2>
                 </div>

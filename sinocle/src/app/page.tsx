@@ -113,7 +113,9 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-2">Clients Review</h2>
+            <h2 className="text-3xl text-black font-bold mb-2">
+              Clients Review
+            </h2>
             <div className="w-12 h-0.5 bg-[#0D8C6D] mx-auto"></div>
           </div>
 
@@ -243,7 +245,7 @@ export default function Home() {
                         height={40}
                       />
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">
+                    <h3 className="text-xl text-black font-semibold mb-2">
                       General Contract
                     </h3>
                     <p className="text-gray-600 text-sm">
@@ -264,7 +266,7 @@ export default function Home() {
                         height={40}
                       />
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">
+                    <h3 className="text-xl text-black font-semibold mb-2">
                       Project Planning
                     </h3>
                     <p className="text-gray-600 text-sm">
@@ -285,7 +287,7 @@ export default function Home() {
                         height={40}
                       />
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">
+                    <h3 className="text-xl text-black font-semibold mb-2">
                       Refurbishment
                     </h3>
                     <p className="text-gray-600 text-sm">
@@ -319,15 +321,15 @@ export default function Home() {
               {/* Content Section */}
               <SlideInSection direction="left" className="w-full lg:w-1/2">
                 <div className="text-left font-serif space-y-4">
-                  <p className="text-base md:text-lg font-bold flex items-center">
+                  <p className="text-base text-[#0D8C6D] md:text-lg font-bold flex items-center">
                     Who We are{" "}
                     <span className="inline-block w-12 h-[2px] bg-black ml-2"></span>
                   </p>
-                  <h1 className="text-3xl md:text-4xl lg:text-[50px] font-bold leading-tight">
+                  <h1 className="text-3xl md:text-4xl lg:text-[50px] font-bold leading-tight text-black ">
                     Sincole Nigeria Limited
                   </h1>
-                  <div className="space-y-4">
-                    <p className="text-base md:text-lg">
+                  <div className="space-y-4 text-black ">
+                    <p className="text-base md:text-lg ">
                       At Sinocle Nigeria Limited, we are proud to be the leading
                       real estate company in Nigeria, offering a comprehensive
                       range of services in real estate development, property
@@ -528,7 +530,9 @@ export default function Home() {
                     <div className="mb-4">
                       <Icon className="w-12 h-12 text-gray-600" />
                     </div>
-                    <h2 className="text-4xl font-bold mb-2">{stat.value}</h2>
+                    <h2 className="text-4xl font-bold mb-2 text-black ">
+                      {stat.value}
+                    </h2>
                     <p className="text-[#999999]">{stat.description}</p>
                   </div>
                 );
