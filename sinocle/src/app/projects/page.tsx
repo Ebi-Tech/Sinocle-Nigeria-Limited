@@ -6,7 +6,7 @@ export default function Projects() {
   const image = "/images/project.png";
 
   return (
-    <main className="w-full text-black ">
+    <main className="w-full min-h-screen bg-[#F5F5F5] mx-auto text-black font-serif overflow-hidden dark:text-white">
       {/* Background Image */}
       <section className="relative h-screen flex font-serif">
         {/* Background Image */}
