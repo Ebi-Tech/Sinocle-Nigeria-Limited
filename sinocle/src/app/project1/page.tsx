@@ -122,7 +122,9 @@ export default function Projects() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-12">
             <SlideInSection direction="down" className="">
-              <h2 className="text-3xl font-bold mb-2">Related Projects</h2>
+              <h2 className="text-3xl text-black font-bold mb-2">
+                Related Projects
+              </h2>
             </SlideInSection>
             <div className="w-24 h-0.5 bg-[#0D8C6D] mx-auto"></div>
           </div>

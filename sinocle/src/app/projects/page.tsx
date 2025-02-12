@@ -80,7 +80,7 @@ export default function Projects() {
                     <h3 className="text-lg font-semibold">{service.title}</h3>
                     <p className="text-gray-600 mt-2">{service.desc}</p>
                     <Link href={service.link || "#"}>
-                      <button className="mt-4 border border-black px-4 py-2 text-sm">
+                      <button className="mt-4 border text-black border-black px-4 py-2 text-sm">
                         LEARN MORE
                       </button>
                     </Link>
