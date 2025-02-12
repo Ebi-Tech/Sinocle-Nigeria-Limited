@@ -26,9 +26,9 @@ const projects = [
 
 export default function Projects() {
   return (
-    <main className="w-full min-h-screen bg-[#F5F5F5] mx-auto text-black font-serif overflow-hidden dark:text-white">
+    <main className="w-full min-h-screen bg-[#F5F5F5] text-black font-serif overflow-hidden dark:text-white">
       {/* Hero Section */}
-      <section className="relative h-screen flex font-serif">
+      <section className="relative h-screen">
         <Image
           src="/images/pro1.png"
           alt="About Background"
@@ -36,29 +36,28 @@ export default function Projects() {
           className="absolute object-cover"
           priority
         />
-
-        <div className="relative flex w-full justify-between text-white gap-10 max-w-full mx-auto px-6 md:px-12 lg:flex">
-          <div className="flex-1 absolute top-[50%] left-[5%] transform -translate-y-1/2 mt-10">
+        <div className="relative h-full max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+          <div className="absolute top-1/2 -translate-y-1/2">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl text-white font-bold">
               Toscana Hotel <br /> Project
             </h1>
             <p className="text-sm sm:text-xl lg:text-xl text-white mt-4">
               From the onset till now, our mission remains centered on
-              delivering <br /> projects of superior quality, always on
-              schedule.
+              delivering <br />
+              projects of superior quality, always on schedule.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* About Project Section */}
       <SlideInSection direction="down" className="">
-        <section className="bg-gray-50 py-12 px-4 sm:px-6 md:px-8 lg:px-6">
-          <div className="mx-auto">
+        <section className="bg-gray-50 py-16">
+          <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               About this Project
             </h2>
-            <div className="w-12 h-1 bg-green-700 mt-2 mb-4"></div>
+            <div className="w-12 h-1 bg-[#0D8C6D] mt-2 mb-4"></div>
             <p className="text-gray-600 leading-relaxed text-sm md:text-base">
               Lectus erat, consectetur eu sapien eget rhoncus consectetur sem.{" "}
               <br />
@@ -73,64 +72,57 @@ export default function Projects() {
               <li>• Metus quis</li>
               <li>• Sodales tristique</li>
             </ul>
-            <div className="w-full py-12 px-4 sm:px-6 md:px-8 lg:px-6 aspect-[16/9] relative">
+
+            {/* Project Image */}
+            <div className="w-full py-12 aspect-[16/9] relative">
               <Image
                 src="/images/pr.png"
                 alt="Modern architectural home"
                 fill
-                className="object-contain mx-auto"
+                className="object-contain"
                 priority
               />
             </div>
 
-            <div className="w-full py-16 px-4 md:px-8 lg:px-12">
-              <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16">
-                {/* Image container */}
-                <div className="w-full md:w-1/2 relative aspect-[4/3]">
-                  <Image
-                    src="/images/pr1.png"
-                    alt="Modern architectural design"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-
-                {/* Text container */}
-                <div className="w-full md:w-1/2 flex flex-col justify-center space-y-4">
-                  <p className="text-gray-600 leading-relaxed">
-                    Lorem ipsum dolor sit consectetur adipiscing elit. Nullam
-                    lectus erat, consectetur eu sapien eget rhoncus consectetur
-                    sem. Proin cursus, dolor a mollis consectetur, risus dolor
-                    fermentum massa, a commodo elit dui sit amet risus. Maecenas
-                    ornare nisl a tortor ultrices bibendum. Nulla fermentum,
-                    metus quis sodales tristique, augue mauris molestie augue
-                    non feugiat ligula risus nec felis.
-                  </p>
-
-                  <p className="text-gray-600 leading-relaxed">
-                    Lectus erat, consectetur eu sapien eget rhoncus consectetur
-                    sem. Proin cursus, dolor a mollis consectetur, risus dolor
-                    fermentum massa, a commodo elit dui sit amet risus. Maecenas
-                    ornare nisl a tortor ultrices bibendum. Nulla fermentum,
-                    metus quis sodales tristique, augue mauris molestie augue
-                    non feugiat ligula risus nec felis.
-                  </p>
-                </div>
+            {/* Split Content Section */}
+            <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 py-16">
+              <div className="w-full md:w-1/2 relative aspect-[4/3]">
+                <Image
+                  src="/images/pr1.png"
+                  alt="Modern architectural design"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <div className="w-full md:w-1/2 flex flex-col justify-center space-y-4">
+                <p className="text-gray-600 leading-relaxed">
+                  Lorem ipsum dolor sit consectetur adipiscing elit. Nullam
+                  lectus erat, consectetur eu sapien eget rhoncus consectetur
+                  sem. Proin cursus, dolor a mollis consectetur, risus dolor
+                  fermentum massa, a commodo elit dui sit amet risus. Maecenas
+                  ornare nisl a tortor ultrices bibendum.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  Lectus erat, consectetur eu sapien eget rhoncus consectetur
+                  sem. Proin cursus, dolor a mollis consectetur, risus dolor
+                  fermentum massa, a commodo elit dui sit amet risus. Maecenas
+                  ornare nisl a tortor ultrices bibendum.
+                </p>
               </div>
             </div>
           </div>
         </section>
       </SlideInSection>
-      <section className="py-16 px-4 md:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          {/* Heading with underline */}
+
+      {/* Related Projects Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-2">Related Projects</h2>
-            <div className="w-24 h-0.5 bg-black mx-auto"></div>
+            <div className="w-24 h-0.5 bg-[#0D8C6D] mx-auto"></div>
           </div>
 
-          {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <div key={index} className="bg-white shadow-md">
@@ -157,7 +149,6 @@ export default function Projects() {
             ))}
           </div>
 
-          {/* View All Button */}
           <div className="text-center mt-12">
             <button className="inline-flex items-center border border-black px-8 py-3 hover:bg-black hover:text-white transition-colors">
               View All
@@ -179,10 +170,12 @@ export default function Projects() {
         </div>
       </section>
 
+      {/* Client Reviews Section */}
       <SlideInSection direction="down" className="">
         <section className="py-16 bg-white">
-          {/* Client Reviews Section */}
-          <ClientReviews />
+          <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+            <ClientReviews />
+          </div>
         </section>
       </SlideInSection>
     </main>

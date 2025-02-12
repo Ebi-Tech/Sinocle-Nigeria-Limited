@@ -12,21 +12,13 @@ export default function About() {
   const image = "/images/about.png";
 
   const teamMembers = [
-    {
-      name: "Jacob Onifade",
-      role: "Founder & CEO",
-      image: "/images/m1.png", // Replace with actual image URL
-    },
+    { name: "Jacob Onifade", role: "Founder & CEO", image: "/images/m1.png" },
     {
       name: "Edward Chukwueneka",
       role: "Legal Advisor",
       image: "/images/m2.png",
     },
-    {
-      name: "Robert Omario",
-      role: "Finance Manager",
-      image: "/images/m3.png",
-    },
+    { name: "Robert Omario", role: "Finance Manager", image: "/images/m3.png" },
     {
       name: "Joseph Chukwudi",
       role: "Technology Lead",
@@ -97,7 +89,6 @@ export default function About() {
     <main className="font-serif w-screen">
       {/* Background Image */}
       <section className="relative h-screen flex font-serif">
-        {/* Background Image */}
         <Image
           src={image}
           alt="About Background"
@@ -105,30 +96,22 @@ export default function About() {
           className="absolute object-cover"
           priority
         />
-
-        {/* Container for Hero Text & Right Content (Large Screens) */}
         <div className="relative flex w-full justify-between text-white gap-10 max-w-full mx-auto px-6 md:px-12 lg:flex">
-          {/* Hero text */}
           <div className="flex-1 absolute top-[50%] left-[5%] transform -translate-y-1/2 mt-10">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl text-white font-bold">
-              About our <br />
-              construction
-              <br /> company
+              About our <br /> construction <br /> company
             </h1>
             <p className="text-sm sm:text-xl lg:text-xl text-white mt-4">
               From the onset till now, our mission remains centered on
-              delivering <br />
-              projects of superior quality, always on schedule.
+              delivering <br /> projects of superior quality, always on
+              schedule.
             </p>
-            {/* CTA Buttons */}
             <div className="mt-8 flex gap-4">
               <button className="border border-white text-white px-6 py-2 font-medium bg-[#0D8C6D] hover:bg-[#38d1ab] transition-colors">
                 Contact Us
               </button>
             </div>
           </div>
-
-          {/* Right Content (Desktop View - Vertically Stacked) */}
           <div className="hidden lg:flex flex-1 flex-col absolute top-[50%] right-[5%] transform -translate-y-1/2 space-y-6">
             <h1 className="font-bold text-[32px] text-[#0D8C6D]">What We Do</h1>
             {[
@@ -195,12 +178,9 @@ export default function About() {
       {/* What We Do Section (For Medium & Small Screens) */}
       <section className="lg:hidden relative py-16 px-6 bg-white text-gray-900 flex justify-center">
         <div className="w-full max-w-3xl">
-          {/* Section Title (Left-aligned) */}
           <h1 className="font-bold text-[32px] text-[#0D8C6D] text-left">
             What We Do
           </h1>
-
-          {/* Services List (Justified Text & Centered Section) */}
           <div className="mt-6 space-y-6">
             {[
               {
@@ -248,9 +228,7 @@ export default function About() {
               },
             ].map((service, index) => (
               <div key={index} className="flex items-start gap-4">
-                {/* Icon */}
                 <span className="flex-shrink-0">{service.icon}</span>
-                {/* Text Content */}
                 <div className="flex-1 text-justify">
                   <h4 className="text-xl font-semibold">{service.title}</h4>
                   {service.desc.map((line, lineIndex) => (
@@ -265,18 +243,15 @@ export default function About() {
         </div>
       </section>
 
+      {/* About Us Section */}
       <SlideInSection direction="up" className="">
         <section className="pt-24 pb-16 bg-gray-50">
           <div className="container mx-auto px-4 max-w-6xl">
-            {/* Title Section */}
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-2 text-black ">About us</h2>
+              <h2 className="text-3xl font-bold mb-2 text-black">About us</h2>
               <div className="w-12 h-1 bg-[#0D8C6D] mx-auto"></div>
             </div>
-
-            {/* Content Grid */}
             <div className="grid md:grid-cols-2 gap-8">
-              {/* Left Column */}
               <div className="text-gray-600 leading-relaxed">
                 <p>
                   At Sinocle Nigeria Limited, we are proud to be the leading
@@ -288,15 +263,13 @@ export default function About() {
                   professionalism, expertise, and integrity.
                 </p>
               </div>
-
-              {/* Right Column */}
               <div className="text-gray-600 leading-relaxed">
                 <p>
                   Our mission is to help our customers across geography and
                   class experience superior satisfaction through our quality
-                  products and services.Our vision is to be a global Real Estate
-                  development company, distinctive for superior value delivery
-                  to our customers, investors and employees.
+                  products and services. Our vision is to be a global Real
+                  Estate development company, distinctive for superior value
+                  delivery to our customers, investors and employees.
                 </p>
               </div>
             </div>
@@ -327,13 +300,11 @@ export default function About() {
                   className="relative bg-white rounded-lg overflow-hidden shadow-md"
                 >
                   <div className="h-[350px] w-full relative">
-                    {" "}
-                    {/* Set a fixed height for the image container */}
                     <Image
                       src={member.image}
                       alt={member.name}
                       fill
-                      className="lg:object-cover md:object-contain sm:object-contain" // Use object-cover for large screens, object-contain for medium and small screens
+                      className="lg:object-cover md:object-contain sm:object-contain"
                     />
                   </div>
                   <div className="absolute bottom-0 bg-gradient-to-t from-black to-transparent w-full p-4 text-white">
@@ -349,7 +320,7 @@ export default function About() {
 
       {/* Achievements Section */}
       <SlideInSection direction="up" className="">
-        <section className="py-12 px-4 bg-gray-100 font-serif text-black ">
+        <section className="py-12 px-4 bg-gray-100 font-serif text-black">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <div className="flex justify-center items-center space-x-3">
@@ -390,14 +361,11 @@ export default function About() {
       </SlideInSection>
 
       {/* Values Section */}
-      <section className="py-16 px-4 md:px-8 lg:px-12  font-serif">
+      <section className="py-16 px-4 md:px-8 lg:px-12 font-serif">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-            {/* Left Column - Values List with Background */}
             <SlideInSection direction="left" className="">
               <div className="relative h-full">
-                {/* Background Image */}
-
                 <div className="absolute inset-0 z-0">
                   <Image
                     src="/images/value.png"
@@ -407,9 +375,7 @@ export default function About() {
                     priority
                   />
                 </div>
-
-                {/* Values Content */}
-                <div className="relative z-10  p-8 space-y-8 text-white">
+                <div className="relative z-10 p-8 space-y-8 text-white">
                   {values.map((value, index) => (
                     <div key={index} className="flex items-start gap-4">
                       <ChevronsRight
@@ -431,7 +397,6 @@ export default function About() {
             </SlideInSection>
 
             <SlideInSection direction="right" className="">
-              {/* Right Column - Content */}
               <div className="space-y-6">
                 <div>
                   <p className="text-base text-[#05362A] md:text-lg font-bold flex items-center">
@@ -442,7 +407,6 @@ export default function About() {
                     No Project Too Big or Too Small
                   </h2>
                 </div>
-
                 <div className="space-y-4 text-gray-600">
                   <p className="text-sm md:text-base">
                     We handle all aspects of the development process, from
@@ -467,9 +431,8 @@ export default function About() {
                     or commercial goals.
                   </p>
                 </div>
-
                 <div className="flex flex-col sm:flex-row gap-4 mt-8 bg-[#0D8C6D] justify-between p-5">
-                  <h1 className=" text-white px-6 py-3 text-sm lg:text-[30px] md:text-base font-medium hover:bg-[#0D8C6D]/90 transition-colors">
+                  <h1 className="text-white px-6 py-3 text-sm lg:text-[30px] md:text-base font-medium hover:bg-[#0D8C6D]/90 transition-colors">
                     Get Free Consultation
                   </h1>
                   <button className="border border-white text-white px-6 py-3 text-sm md:text-base font-medium hover:bg-[#0D8C6D] hover:text-white transition-colors">
