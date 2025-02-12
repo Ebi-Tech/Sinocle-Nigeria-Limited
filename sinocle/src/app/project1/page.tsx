@@ -157,7 +157,7 @@ export default function Projects() {
             </div>
           </SlideInSection>
           <div className="text-center mt-12">
-            <button className="inline-flex items-center border border-black px-8 py-3 hover:bg-black hover:text-white transition-colors">
+            <button className="inline-flex items-center text-black border border-black px-8 py-3 hover:bg-black hover:text-white transition-colors">
               View All
               <svg
                 className="ml-2 w-4 h-4"
