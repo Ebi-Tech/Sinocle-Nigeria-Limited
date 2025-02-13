@@ -20,17 +20,14 @@ export async function generateMetadata({ params }: GenerateMetadataProps) {
     description: post?.excerpt || "Blog post details",
   };
 }
+
 async function getBlogPost(id: string) {
   const post = blogPosts.find((post) => post.id === id);
   if (!post) throw new Error("Post not found");
   return post;
 }
 
-type Props = {
-  params: { id: string };
-};
-
-export default async function BlogPost({ params }: Props) {
+export default async function BlogPost({ params }: { params: { id: string } }) {
   const post = await getBlogPost(params.id);
 
   return (
@@ -95,10 +92,10 @@ export default async function BlogPost({ params }: Props) {
               {/* Quote Section */}
               <blockquote className="bg-gray-900 text-white p-8 rounded-lg my-12 text-center">
                 <p className="text-xl italic mb-0">
-                  `The job market of the future will consist of those jobs that
-                  robots cannot perform. Our blue-collar work is pattern
+                  &quot;The job market of the future will consist of those jobs
+                  that robots cannot perform. Our blue-collar work is pattern
                   recognition, making sense of what you see. Gardeners will
-                  still have jobs because every garden is different.`
+                  still have jobs because every garden is different.&quot;
                 </p>
               </blockquote>
 
