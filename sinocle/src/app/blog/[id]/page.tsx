@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -6,23 +5,21 @@ import { ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "../../../components/Card";
 import { blogPosts } from "@/app/data/blogs";
 
-interface BlogPostParams {
+interface PageProps {
   params: {
     id: string;
   };
-  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-export default function BlogPost({ params }: BlogPostParams) {
-  const post = blogPosts.find((post) => post.id === params.id);
+async function getBlogPost(id: string) {
+  // Simulate async data fetching
+  const post = blogPosts.find((post) => post.id === id);
+  if (!post) throw new Error("Post not found");
+  return post;
+}
 
-  if (!post) {
-    return (
-      <div className="flex items-center justify-center min-h-screen bg-slate-50">
-        <div className="text-gray-600">Post not found</div>
-      </div>
-    );
-  }
+export default async function BlogPost({ params }: PageProps) {
+  const post = await getBlogPost(params.id);
 
   return (
     <main className="bg-slate-50 min-h-screen pt-20">
