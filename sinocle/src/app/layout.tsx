@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
 import "./globals.css";
+import Footer from "@/components/Footer";
 import Navbar from "../components/navbar";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Your App Name",
-  description: "Your App Description",
+  title: "Sinocle Nigeria Limited",
+  description: "Welcome to Sinocle Nigeria Limited, a leading name in construction and real estate development",
 };
 
 export default function RootLayout({
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body className="w-full bg-white">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
