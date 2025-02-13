@@ -6,7 +6,14 @@ import { ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "../../../components/Card";
 import { blogPosts } from "@/app/data/blogs";
 
-export default function BlogPost({ params }: { params: { id: string } }) {
+interface BlogPostParams {
+  params: {
+    id: string;
+  };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
+
+export default function BlogPost({ params }: BlogPostParams) {
   const post = blogPosts.find((post) => post.id === params.id);
 
   if (!post) {
