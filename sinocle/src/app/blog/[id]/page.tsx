@@ -5,11 +5,12 @@ import { ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "../../../components/Card";
 import { blogPosts } from "@/app/data/blogs";
 
-interface PageProps {
+type Props = {
   params: {
     id: string;
   };
-}
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
 async function getBlogPost(id: string) {
   // Simulate async data fetching
@@ -18,7 +19,7 @@ async function getBlogPost(id: string) {
   return post;
 }
 
-export default async function BlogPost({ params }: PageProps) {
+export default async function BlogPost({ params }: Props) {
   const post = await getBlogPost(params.id);
 
   return (
