@@ -7,19 +7,12 @@ import { blogPosts } from "@/app/data/blogs";
 
 // Define the generated params type
 type GenerateMetadataProps = {
-  params: Promise<{ id: string }>;
+  params: { id: string };
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-// Define the page props type
-type Props = {
-  params: { id: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
-};
-
-// Generate metadata function (required for Vercel deployment)
 export async function generateMetadata({ params }: GenerateMetadataProps) {
-  const id = await (await params).id;
+  const id = params.id; // No need to `await`
   const post = blogPosts.find((post) => post.id === id);
 
   return {
@@ -27,12 +20,15 @@ export async function generateMetadata({ params }: GenerateMetadataProps) {
     description: post?.excerpt || "Blog post details",
   };
 }
-
 async function getBlogPost(id: string) {
   const post = blogPosts.find((post) => post.id === id);
   if (!post) throw new Error("Post not found");
   return post;
 }
+
+type Props = {
+  params: { id: string };
+};
 
 export default async function BlogPost({ params }: Props) {
   const post = await getBlogPost(params.id);
