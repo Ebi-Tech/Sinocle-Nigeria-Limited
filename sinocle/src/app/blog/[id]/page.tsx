@@ -79,10 +79,10 @@ export default function BlogPost({ params }: { params: { id: string } }) {
               {/* Quote Section */}
               <blockquote className="bg-gray-900 text-white p-8 rounded-lg my-12 text-center">
                 <p className="text-xl italic mb-0">
-                  "The job market of the future will consist of those jobs that
+                  `The job market of the future will consist of those jobs that
                   robots cannot perform. Our blue-collar work is pattern
                   recognition, making sense of what you see. Gardeners will
-                  still have jobs because every garden is different."
+                  still have jobs because every garden is different.`
                 </p>
               </blockquote>
 
