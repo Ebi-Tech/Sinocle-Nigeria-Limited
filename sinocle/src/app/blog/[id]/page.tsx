@@ -5,15 +5,30 @@ import { ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "../../../components/Card";
 import { blogPosts } from "@/app/data/blogs";
 
-type Props = {
-  params: {
-    id: string;
-  };
+// Define the generated params type
+type GenerateMetadataProps = {
+  params: Promise<{ id: string }>;
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
+// Define the page props type
+type Props = {
+  params: { id: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
+
+// Generate metadata function (required for Vercel deployment)
+export async function generateMetadata({ params }: GenerateMetadataProps) {
+  const id = await (await params).id;
+  const post = blogPosts.find((post) => post.id === id);
+
+  return {
+    title: post?.title || "Blog Post",
+    description: post?.excerpt || "Blog post details",
+  };
+}
+
 async function getBlogPost(id: string) {
-  // Simulate async data fetching
   const post = blogPosts.find((post) => post.id === id);
   if (!post) throw new Error("Post not found");
   return post;
