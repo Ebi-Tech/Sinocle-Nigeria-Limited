@@ -5,16 +5,13 @@ import { ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "../../../components/Card";
 import { blogPosts } from "@/app/data/blogs";
 
-// Define proper types for Next.js page props
-type PageProps = {
+type Props = {
     params: {
         id: string;
     };
-    searchParams: { [key: string]: string | string[] | undefined };
 };
 
-// Metadata generation
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: Props) {
     const post = blogPosts.find((post) => post.id === params.id);
 
     return {
@@ -23,15 +20,13 @@ export async function generateMetadata({ params }: PageProps) {
     };
 }
 
-// Helper function to get blog post
 async function getBlogPost(id: string) {
     const post = blogPosts.find((post) => post.id === id);
     if (!post) throw new Error("Post not found");
     return post;
 }
 
-// Page component with correct type annotation
-export default async function BlogPost({ params, searchParams }: PageProps) {
+export default async function BlogPost({ params }: Props) {
     const post = await getBlogPost(params.id);
 
     return (
