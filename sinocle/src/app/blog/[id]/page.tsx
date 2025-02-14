@@ -2,17 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { ArrowLeft } from "lucide-react";
+import { Metadata } from "next";
 import { Card, CardContent } from "../../../components/Card";
 import { blogPosts } from "@/app/data/blogs";
 
-type Props = {
-    params: {
-        id: string;
-    };
-};
+// Updated interface for Next.js 15 page props
+export interface PageProps {
+    params: Promise<{ id: string }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
 
-export async function generateMetadata({ params }: Props) {
-    const post = blogPosts.find((post) => post.id === params.id);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const resolvedParams = await params;
+    const post = blogPosts.find((post) => post.id === resolvedParams.id);
 
     return {
         title: post?.title || "Blog Post",
@@ -26,8 +28,9 @@ async function getBlogPost(id: string) {
     return post;
 }
 
-export default async function BlogPost({ params }: Props) {
-    const post = await getBlogPost(params.id);
+export default async function BlogPost({ params }: PageProps) {
+    const resolvedParams = await params;
+    const post = await getBlogPost(resolvedParams.id);
 
     return (
         <main className="bg-slate-50 min-h-screen pt-20">
